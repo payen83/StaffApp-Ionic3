@@ -7,17 +7,9 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { EmployeesPage } from '../pages/employees/employees';
-import { DetailsPageModule } from '../pages/details/details.module';
-import { AddPageModule } from '../pages/add/add.module';
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { WebserviceProvider } from '../providers/webservice/webservice';
-import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
-
 
 @NgModule({
   declarations: [
@@ -25,15 +17,10 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    EmployeesPage
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    HttpModule,
-    DetailsPageModule,
-    AddPageModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -42,14 +29,12 @@ import { HttpModule } from '@angular/http';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    EmployeesPage
+    TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WebserviceProvider
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
