@@ -7,11 +7,35 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+    <ion-list>
+        <ion-item>
+            <ion-label fixed>Name</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="employee.name"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label fixed>IC No</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="employee.icNo"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label fixed>Image Link</ion-label>
+            <ion-input type="text" value="" [(ngModel)]="employee.imageURL"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label>Company</ion-label>
+            <ion-select [(ngModel)]="employee.company">
+              <ion-option value="MySihat">MySihat</ion-option>
+              <ion-option value="Kumpulan Wang Simpanan Pekerja">KWSP</ion-option>
+              <ion-option value="Lembaga Hasil Dalam Negeri">LHDN</ion-option>
+            </ion-select>
+        </ion-item>
+  
+    </ion-list>
+  
+    <div padding>
+        <button ion-button (click)="saveData()">Submit</button>
+    </div>
+  
 </ion-content>
